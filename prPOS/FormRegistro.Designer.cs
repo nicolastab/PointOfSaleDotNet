@@ -38,6 +38,15 @@
             this.ColValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.labelTotal = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tbFacturaNumero = new System.Windows.Forms.TextBox();
+            this.tbNombreCajero = new System.Windows.Forms.TextBox();
+            this.dtpFechaFactura = new System.Windows.Forms.DateTimePicker();
+            this.btCancelFactura = new System.Windows.Forms.Button();
+            this.btPagarFactura = new System.Windows.Forms.Button();
+            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleFactura)).BeginInit();
             this.SuspendLayout();
@@ -46,6 +55,13 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.dtpFechaFactura);
+            this.groupBox1.Controls.Add(this.tbNombreCajero);
+            this.groupBox1.Controls.Add(this.tbFacturaNumero);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(7, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(790, 135);
@@ -58,9 +74,12 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.btPagarFactura);
+            this.groupBox2.Controls.Add(this.btCancelFactura);
             this.groupBox2.Controls.Add(this.labelTotal);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.dgvDetalleFactura);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(7, 144);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(790, 367);
@@ -82,7 +101,7 @@
             this.ColValor});
             this.dgvDetalleFactura.Location = new System.Drawing.Point(6, 19);
             this.dgvDetalleFactura.Name = "dgvDetalleFactura";
-            this.dgvDetalleFactura.Size = new System.Drawing.Size(778, 290);
+            this.dgvDetalleFactura.Size = new System.Drawing.Size(778, 254);
             this.dgvDetalleFactura.TabIndex = 0;
             // 
             // ColCodigoArticulo
@@ -124,9 +143,10 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(480, 327);
+            this.label1.Location = new System.Drawing.Point(454, 302);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(133, 37);
             this.label1.TabIndex = 1;
@@ -134,13 +154,98 @@
             // 
             // labelTotal
             // 
+            this.labelTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelTotal.AutoSize = true;
             this.labelTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotal.Location = new System.Drawing.Point(680, 327);
+            this.labelTotal.Location = new System.Drawing.Point(686, 302);
             this.labelTotal.Name = "labelTotal";
             this.labelTotal.Size = new System.Drawing.Size(84, 37);
             this.labelTotal.TabIndex = 2;
             this.labelTotal.Text = "0.00";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(7, 31);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(93, 24);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Factura #:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(337, 31);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 24);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Fecha:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(10, 81);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(70, 24);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Cajero:";
+            // 
+            // tbFacturaNumero
+            // 
+            this.tbFacturaNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbFacturaNumero.Location = new System.Drawing.Point(122, 29);
+            this.tbFacturaNumero.Name = "tbFacturaNumero";
+            this.tbFacturaNumero.Size = new System.Drawing.Size(195, 29);
+            this.tbFacturaNumero.TabIndex = 3;
+            // 
+            // tbNombreCajero
+            // 
+            this.tbNombreCajero.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbNombreCajero.Location = new System.Drawing.Point(122, 79);
+            this.tbNombreCajero.Name = "tbNombreCajero";
+            this.tbNombreCajero.Size = new System.Drawing.Size(484, 29);
+            this.tbNombreCajero.TabIndex = 4;
+            // 
+            // dtpFechaFactura
+            // 
+            this.dtpFechaFactura.CustomFormat = "dddd, dd-MMMM-yyyy hh:mm:ss";
+            this.dtpFechaFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaFactura.Location = new System.Drawing.Point(412, 29);
+            this.dtpFechaFactura.Name = "dtpFechaFactura";
+            this.dtpFechaFactura.Size = new System.Drawing.Size(358, 29);
+            this.dtpFechaFactura.TabIndex = 5;
+            this.dtpFechaFactura.Value = new System.DateTime(2023, 12, 3, 10, 46, 26, 0);
+            // 
+            // btCancelFactura
+            // 
+            this.btCancelFactura.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btCancelFactura.BackColor = System.Drawing.Color.Red;
+            this.btCancelFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCancelFactura.ForeColor = System.Drawing.Color.FloralWhite;
+            this.btCancelFactura.Location = new System.Drawing.Point(6, 280);
+            this.btCancelFactura.Name = "btCancelFactura";
+            this.btCancelFactura.Size = new System.Drawing.Size(94, 81);
+            this.btCancelFactura.TabIndex = 3;
+            this.btCancelFactura.Text = "Cancelar";
+            this.btCancelFactura.UseVisualStyleBackColor = false;
+            // 
+            // btPagarFactura
+            // 
+            this.btPagarFactura.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btPagarFactura.BackColor = System.Drawing.Color.LimeGreen;
+            this.btPagarFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btPagarFactura.ForeColor = System.Drawing.Color.FloralWhite;
+            this.btPagarFactura.Location = new System.Drawing.Point(106, 280);
+            this.btPagarFactura.Name = "btPagarFactura";
+            this.btPagarFactura.Size = new System.Drawing.Size(342, 81);
+            this.btPagarFactura.TabIndex = 4;
+            this.btPagarFactura.Text = "PAGAR";
+            this.btPagarFactura.UseVisualStyleBackColor = false;
             // 
             // FormRegistro
             // 
@@ -151,6 +256,8 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FormRegistro";
             this.Text = "Registro";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleFactura)).EndInit();
@@ -170,5 +277,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColValor;
         private System.Windows.Forms.Label labelTotal;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dtpFechaFactura;
+        private System.Windows.Forms.TextBox tbNombreCajero;
+        private System.Windows.Forms.TextBox tbFacturaNumero;
+        private System.Windows.Forms.Button btPagarFactura;
+        private System.Windows.Forms.Button btCancelFactura;
     }
 }
