@@ -16,7 +16,7 @@ namespace prPOS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormRegistro());
+            Application.Run(new Form1());
         }
     }
 }

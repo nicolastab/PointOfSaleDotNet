@@ -21,5 +21,23 @@ namespace prPOS
         {
 
         }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("¿Seguro que quieres salir?", "Confirmar salida",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void registrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormRegistro newMDIChild = new FormRegistro();
+            newMDIChild.MdiParent = this;
+            newMDIChild.Show();
+        }
     }
 }
